@@ -11,6 +11,7 @@ import soml2 from './images/orphanages/soml2.jpeg'
 import schneider from './images/schneider.png'
 import asohon from './images/asohon.png'
 import sdg from './images/sdg.png'
+import orphanageHouse from './images/orphanagehouse.jpeg'
 
 
 export {
@@ -24,7 +25,8 @@ export {
   quoteRight,
   schneider,
   asohon,
-  sdg
+  sdg,
+  orphanageHouse
 }
 
 export const projectImages = [

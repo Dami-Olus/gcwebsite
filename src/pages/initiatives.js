@@ -8,11 +8,14 @@ import {
   asohon,
   sdg,
 } from "@/assets";
+import Accordion from "@/components/Accordion";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
 function ourinitiatives() {
+  const router = useRouter();
   return (
     <div className="">
       <div className="bg-black h-[600px]">
@@ -22,7 +25,10 @@ function ourinitiatives() {
             Project Catalyze: Catalyzing the leaders of tomorrow for growth
           </h1>
 
-          <button className="py-5 px-10 bg-white text-black mt-20 font-bold text-xl rounded">
+          <button
+            onClick={() => router.push("/donate")}
+            className="py-5 px-10 bg-white text-black mt-20 font-bold text-xl rounded"
+          >
             Support Us
           </button>
         </div>
@@ -130,21 +136,30 @@ function ourinitiatives() {
         </div>
       </div>
       {/*Image Gallery*/}
-      <div className="mt-20">
-        <h1 className="text-center text-5xl mb-10">Project Gallery</h1>
-        <div className="flex space-x-10 justify-center">
+      <div className="mt-20  ml-20">
+        <h1 className="text-5xl mb-10">Project Gallery</h1>
+        <div className="flex space-x-10  items-center">
           {projectImages.map((image) => (
-            <Image
-              src={image}
-              height={400}
-              width={400}
-              style={{ borderRadius: "50%" }}
-            />
+            <div className="w-80">
+              <Image
+                src={image}
+                height={400}
+                width={400}
+                // style={{ borderRadius: "50%" }}
+              />
+              <h1>Orphanage name</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+                laboriosam excepturi error tempora dignissimos labore
+                repudiandae similique architecto, porro quos, magni voluptatem,
+                quae earum ipsam at voluptate ut quisquam ab.
+              </p>
+            </div>
           ))}
         </div>
       </div>
 
-      <div className="flex mt-10 ml-32">
+      <div className="flex justify-center mt-10 ml-32 mr-48">
         {/*Partners */}
         <div className="bg-gray-200 px-10 py-10 space-y-10 mr-10">
           <h1 style={{ fontStyle: "bolder" }} className="text-2xl mt-10">
@@ -154,9 +169,12 @@ function ourinitiatives() {
           <Image src={asohon} alt="" />
           <Image src={sdg} alt="" />
         </div>
+
         {/*Goals*/}
-        <div className="bg-[#89437e] text-white text-xl py-10 px-10">
-          <h1 style={{fontWeight: 'bolder'}} className="text-5xl mb-10">Our mission</h1>
+        <div className="bg-[#89437e] text-white text-xl py-10 px-10 w-[700px]">
+          <h1 style={{ fontWeight: "bolder" }} className="text-5xl mb-10">
+            Our mission
+          </h1>
           <p className="mb-10">
             Project Catalyze’s goal is to reduce overall cost of power so the
             savings can be utilized for the children’s education, food and
@@ -176,7 +194,18 @@ function ourinitiatives() {
               on so many people’s lives.
             </p>
           </ul>
-          <button className="bg-white mt-16 py-5 px-10 text-[#89347e] rounded-[60px]">Donate Today!</button>
+          <button className="bg-white mt-16 py-5 px-10 text-[#89347e] rounded-[60px]">
+            Donate Today!
+          </button>
+        </div>
+      </div>
+
+      {/*FAQ */}
+      <div>
+        <div>image</div>
+        <div>
+          <h1>Questions People Ask</h1>
+          <Accordion />
         </div>
       </div>
     </div>
